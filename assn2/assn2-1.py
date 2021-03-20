@@ -6,8 +6,6 @@ def star_stacking(N, star_array):
     K = int(math.log2(int(N/3)))
     for p in range(1, K+1):
         left_array = copy.deepcopy(star_array)
-        two_k = int(2**p)
-
         for i in range(0, len(left_array), 3):
             i_three_step = int(i/3)
             space_num = (int(len(left_array)/3) - 1 - i_three_step) * 6
@@ -22,7 +20,6 @@ def star_stacking(N, star_array):
 T = int(sys.stdin.readline())
 for _ in range(T):
     N = int(sys.stdin.readline())
-    two_k = int(N / 3)
     star_array = [
         ["*", "*", "*", "*", "*", "\n"],
         [" ", "*", " ", "*", "\n"],
